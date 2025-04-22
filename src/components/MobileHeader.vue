@@ -12,7 +12,10 @@ onClickOutside(target, () => (isMenuOpen.value = false));
 <template>
   <header class="header" ref="target">
     <NuxtLink to="/" class="logo noselect" @click="isMenuOpen = false"
-      ><img src="@/assets/images/logo.svg" alt="logo tekila web factory"
+      ><img
+        class="logo"
+        src="@/assets/images/logotwf-dark.svg"
+        alt="logo tekila web factory"
     /></NuxtLink>
     <button
       type="button"
@@ -23,67 +26,13 @@ onClickOutside(target, () => (isMenuOpen.value = false));
       <IconComponent
         :icon="isMenuOpen ? 'xx' : 'list'"
         size="2rem"
-        :color="colors['cannoli-cream']"
+        :color="colors['primaryColor']"
       />
     </button>
     <Transition>
       <nav class="header__nav" v-if="isMenuOpen">
         <ul class="header__nav__links">
-          <li class="header__nav__links__link">
-            <NuxtLink to="/cuisine-sur-mesure-savoie" class="nuxt-link" exact
-              >Cuisines<span class="line"></span
-            ></NuxtLink>
-          </li>
-          <li class="header__nav__links__link">
-            <NuxtLink to="/dressings-sur-mesure-savoie" class="nuxt-link" exact
-              >Dressings<span class="line"></span
-            ></NuxtLink>
-          </li>
-          <li class="header__nav__links__link">
-            <NuxtLink
-              to="/salle-de-bain-sur-mesure-savoie"
-              class="nuxt-link"
-              exact
-              >Salles de bain<span class="line"></span
-            ></NuxtLink>
-          </li>
-          <li class="header__nav__links__link">
-            <NuxtLink
-              to="/bureaux-et-magasins-sur-mesure"
-              class="nuxt-link"
-              exact
-              >Bureaux et magasins<span class="line"></span
-            ></NuxtLink>
-          </li>
-          <li class="header__nav__links__link">
-            <NuxtLink to="/cave-a-vin-sur-mesure" class="nuxt-link" exact
-              >Caves à vin<span class="line"></span
-            ></NuxtLink>
-          </li>
-          <li class="header__nav__links__link">
-            <NuxtLink
-              to="/ameublement-professionnel-savoie"
-              class="nuxt-link"
-              exact
-              >Ameublement professionnel<span class="line"></span
-            ></NuxtLink>
-          </li>
-
-          <li class="header__nav__links__link">
-            <NuxtLink
-              to="/salons-et-salles-a-manger-sur-mesure"
-              class="nuxt-link"
-              exact
-              >Salons et salles à manger<span class="line"></span
-            ></NuxtLink>
-          </li>
-
-          <li class="header__nav__links__link">
-            <NuxtLink to="/meubles-sur-mesure-savoie" class="nuxt-link" exact
-              >Toutes les réalisations sur mesure<span class="line"></span
-            ></NuxtLink>
-          </li>
-          <li class="header__nav__links__link">
+          <!-- <li class="header__nav__links__link">
             <NuxtLink
               to="/contact-ebeniste-savoie"
               class="nuxt-link"
@@ -91,19 +40,26 @@ onClickOutside(target, () => (isMenuOpen.value = false));
               exact
               >Devis et contact<span class="line"></span
             ></NuxtLink>
-          </li>
+          </li> -->
         </ul>
       </nav>
     </Transition>
   </header>
 </template>
 <style lang="scss" scoped>
+.logo {
+  width: 150px;
+}
 .header {
   display: flex;
   position: relative;
   padding: 1.5rem;
   background-color: $base-color;
   box-shadow: $shadow;
+
+  @media (min-width: $big-tablet-screen) {
+    display: none;
+  }
 
   &__nav {
     position: fixed;
@@ -155,7 +111,7 @@ onClickOutside(target, () => (isMenuOpen.value = false));
 .router-link-exact-active {
   .line {
     width: 100%;
-    background-color: $tertiary-color;
+    background-color: $accent-color;
   }
 }
 </style>

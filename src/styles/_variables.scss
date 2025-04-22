@@ -5,23 +5,27 @@ $desktop-screen: 1440px;
 $super-big-screen: 2400px;
 
 //COLORS
-$base-color: #f0f0e5;
-$primary-color: #f3f5f7;
-$secondary-color: #56453f;
-$tertiary-color: #a47764;
-$text-color: #161616;
+$base-color: #f7f7f7;
+$primary-color: #fffdfa;
+$secondary-color: #005853;
+$accent-color: #01a5a5;
+$text-color: #202020;
 $text-color-alt: $primary-color;
 $error-color: #bb0025;
 $success-color: #008e26;
 
 $text-color-faded: rgba($text-color, 0.5);
-$primary-color-faded: rgba($primary-color, 0.5);
+$primary-color-faded: rgba($primary-color, 0.2);
 $secondary-color-faded: rgba($secondary-color, 0.5);
+$accent-color-faded: rgba($accent-color, 0.5);
 $base-color-darker: #eaeadd;
+
+$transparent-light: rgba($text-color, 0.1);
+$transparent-dark: rgba($primary-color, 0.1);
 
 //BORDERS
 $radius: 20px;
-$big-radius: 30px;
+$big-radius: 40px;
 
 //SHADOWS
 $shadow: 2px 2px 8px rgba(0, 0, 0, 0.02);
@@ -31,14 +35,16 @@ $shadow-text-alt: 0px 0px 2px $text-color-alt;
 // TYPO
 $regular: 400;
 $bold: 700;
+$extra-bold: 800;
 
 //FONT SIZES
-$main-text-size: 1rem;
-$medium-text-size: 1.5rem;
-$big-text-size: 2rem;
-$huge-text-size: 2.5rem;
-$medium-title-size: 4rem;
-$big-title-size: 8rem;
-$huge-title-size: 18.75rem;
+$small-text-size: 0.75rem;
+$text-size-1: 1rem;
+$text-size-2: 1.125rem;
+$text-size-3: 1.375rem;
+$subtitles-size-1: 1.25rem;
+$subtitles-size-2: 1.75rem;
+$titles-size-1: 2.5rem;
+$titles-size-2: 5rem;
 
 $blur: 2px;

@@ -1,18 +1,6 @@
 @font-face {
-  font-family: "Helvetica Text Now";
-  src: url(@/assets/fonts/HelveticaNowText-Regular.woff) format("woff");
-  font-display: swap;
-  font-weight: 400;
-}
-@font-face {
-  font-family: "Helvetica Text Now";
-  src: url(@/assets/fonts/HelveticaNowText-Bold.woff) format("woff");
-  font-display: swap;
-  font-weight: 600;
-}
-@font-face {
-  font-family: "Italiana";
-  src: url(@/assets/fonts/Italiana-Regular.ttf) format("truetype");
+  font-family: "Figtree";
+  src: url(@/assets/fonts/figtree-variable.ttf) format("ttf");
   font-display: swap;
 }
 
@@ -31,7 +19,7 @@ html {
 
 body {
   background-color: $base-color;
-  font-family: "Helvetica Text Now", sans-serif;
+  font-family: "Figtree", sans-serif;
   color: $text-color;
   overflow-x: hidden;
 }
@@ -49,7 +37,8 @@ input {
 button {
   border: 1px solid transparent;
   background-color: transparent;
-  font-size: $main-text-size;
+  font-size: $text-size-1;
+  font-weight: $regular;
 }
 
 input,

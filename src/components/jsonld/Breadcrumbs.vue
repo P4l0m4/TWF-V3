@@ -9,7 +9,7 @@ const props = defineProps({
   color: {
     type: String,
     required: false,
-    default: colors["chocolate-martini"],
+    default: colors["secondaryColor"],
   },
 });
 
@@ -61,7 +61,7 @@ useJsonld(() => ({
 
   &__breadcrumb {
     font-weight: $regular;
-    font-size: $main-text-size;
+    font-size: $text-size-1;
     text-decoration: none;
     display: flex;
     align-items: center;

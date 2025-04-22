@@ -33,7 +33,7 @@ defineProps(["error"]);
 
     & h2 {
       font-weight: $regular;
-      font-size: $main-text-size;
+      font-size: $text-size-2;
     }
 
     & button {

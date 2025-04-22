@@ -80,7 +80,7 @@ function toggleQuestion(index) {
             ><IconComponent
               :icon="questionOpened === index ? 'xx' : 'plus'"
               size="1rem"
-              :color="colors['lucent-white']"
+              :color="colors['primaryColor']"
           /></span>
           {{ question.title }}
         </h2>
@@ -114,7 +114,7 @@ function toggleQuestion(index) {
       display: block;
       width: 100%;
       height: 2px;
-      background-color: $tertiary-color;
+      background-color: $accent-color;
       margin-top: 1rem;
     }
   }
@@ -173,7 +173,7 @@ function toggleQuestion(index) {
         .icon {
           width: 40px;
           height: 40px;
-          background-color: $tertiary-color;
+          background-color: $accent-color;
           display: flex;
           justify-content: center;
           align-items: center;
