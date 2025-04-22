@@ -1,4 +1,12 @@
 <script setup lang="ts">
+import { ref } from "vue";
+import { isDesktop } from "~/utils/functions";
+const desktopScreen = ref(isDesktop());
+
+window.addEventListener("resize", () => {
+  desktopScreen.value = isDesktop();
+});
+
 const argumentsList = [
   {
     title: "Service client réactif 7j/7",
@@ -64,6 +72,15 @@ const dataList = [
       <h1 class="headlines__title">
         Création de sites Web à Chambéry, en Savoie
       </h1>
+      <NuxtLink
+        to="https://calendar.app.google/q4vewDNVHKHNjyDG6"
+        target="_blank"
+        v-if="!desktopScreen"
+        style="margin-top: 1rem"
+        ><PrimaryButton variant="secondary-color" icon="chat-circle-bold"
+          >Prendre rendez-vous
+        </PrimaryButton>
+      </NuxtLink>
     </div>
     <img
       class="index__banner__img"
@@ -190,8 +207,11 @@ const dataList = [
       }
 
       &__title {
-        font-size: $titles-size-1;
+        font-size: $subtitles-size-2;
         font-weight: $bold;
+        @media (min-width: $big-tablet-screen) {
+          font-size: $titles-size-1;
+        }
       }
 
       &__description {
@@ -207,7 +227,7 @@ const dataList = [
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 4rem;
   background-color: $accent-color-faded;
-  padding: 1rem;
+  padding: 2rem 1rem;
 
   @media (min-width: $big-tablet-screen) {
     padding: 2rem 4rem;
@@ -225,7 +245,7 @@ const dataList = [
       font-weight: $bold;
     }
 
-    &subtitle {
+    &__subtitle {
       font-size: $text-size-2;
       font-weight: $regular;
     }

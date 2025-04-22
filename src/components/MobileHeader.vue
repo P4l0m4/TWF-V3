@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { colors } from "@/utils/colors";
 import { onClickOutside } from "@vueuse/core";
 import { useTemplateRef } from "vue";
@@ -8,6 +8,27 @@ const isMenuOpen = ref(false);
 
 const target = useTemplateRef<HTMLElement>("target");
 onClickOutside(target, () => (isMenuOpen.value = false));
+
+onMounted(() => {
+  const header = document.querySelector("header");
+  if (!header) return;
+
+  let ticking = false;
+
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        if (!header) return;
+        const scrolledPastVH = window.scrollY > window.innerHeight;
+        header.classList.toggle("scrolled-vh", scrolledPastVH);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+
+  window.addEventListener("scroll", onScroll);
+});
 </script>
 <template>
   <header class="header" ref="target">
@@ -17,7 +38,15 @@ onClickOutside(target, () => (isMenuOpen.value = false));
         src="@/assets/images/logotwf-dark.svg"
         alt="logo tekila web factory"
     /></NuxtLink>
-    <button
+    <NuxtLink
+      to="https://calendar.app.google/q4vewDNVHKHNjyDG6"
+      target="_blank"
+      style="margin-left: auto"
+      ><PrimaryButton variant="secondary-color"
+        >Prendre rendez-vous
+      </PrimaryButton>
+    </NuxtLink>
+    <!-- <button
       type="button"
       class="menu-button noselect"
       @click="isMenuOpen = !isMenuOpen"
@@ -26,13 +55,13 @@ onClickOutside(target, () => (isMenuOpen.value = false));
       <IconComponent
         :icon="isMenuOpen ? 'xx' : 'list'"
         size="2rem"
-        :color="colors['primaryColor']"
+        :color="colors['primary-color']"
       />
-    </button>
-    <Transition>
+    </button> -->
+    <!-- <Transition>
       <nav class="header__nav" v-if="isMenuOpen">
         <ul class="header__nav__links">
-          <!-- <li class="header__nav__links__link">
+          <li class="header__nav__links__link">
             <NuxtLink
               to="/contact-ebeniste-savoie"
               class="nuxt-link"
@@ -40,26 +69,31 @@ onClickOutside(target, () => (isMenuOpen.value = false));
               exact
               >Devis et contact<span class="line"></span
             ></NuxtLink>
-          </li> -->
+          </li>
         </ul>
       </nav>
-    </Transition>
+    </Transition> -->
   </header>
 </template>
 <style lang="scss" scoped>
 .logo {
-  width: 150px;
+  width: 100px;
+}
+.scrolled-vh {
+  display: flex !important;
+  background-color: $accent-color;
 }
 .header {
-  display: flex;
+  display: none;
   position: relative;
   padding: 1.5rem;
   background-color: $base-color;
   box-shadow: $shadow;
-
-  @media (min-width: $big-tablet-screen) {
-    display: none;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
 
   &__nav {
     position: fixed;

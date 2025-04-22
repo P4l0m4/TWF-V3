@@ -5,7 +5,7 @@
       <div class="footer__text__column">
         <NuxtLink to="/" class="logo noselect"
           ><img
-            src="@/assets/images/logotwf-small-light.svg"
+            src="@/assets/images/logotwf-light.svg"
             alt="logo tekila web factory"
         /></NuxtLink>
         <p>
@@ -84,7 +84,12 @@
             size="20px"
         /></a>
       </div> -->
-      <span style="margin-left: auto">Mentions légales</span>
+      <NuxtLink
+        style="margin-left: auto"
+        to="documents/mentions-legales.pdf"
+        target="_blank"
+        >Mentions légales</NuxtLink
+      >
     </div>
   </footer>
 </template>
