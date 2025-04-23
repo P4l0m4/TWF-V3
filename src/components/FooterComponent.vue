@@ -84,10 +84,7 @@
             size="20px"
         /></a>
       </div> -->
-      <NuxtLink
-        style="margin-left: auto"
-        to="documents/mentions-legales.pdf"
-        target="_blank"
+      <NuxtLink to="documents/mentions-legales.pdf" target="_blank"
         >Mentions légales</NuxtLink
       >
     </div>
