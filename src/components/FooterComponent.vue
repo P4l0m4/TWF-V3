@@ -24,7 +24,10 @@
       <div class="footer__text__column">
         <NuxtLink to="#tarifs" class="footer__text__column__link"
           >Tarifs</NuxtLink
-        ><NuxtLink to="#process" class="footer__text__column__link"
+        ><NuxtLink
+          to="#process"
+          class="footer__text__column__link"
+          style="opacity: 0.5; pointer-events: none"
           >Process</NuxtLink
         >
         <NuxtLink to="#who-we-are" class="footer__text__column__link"
