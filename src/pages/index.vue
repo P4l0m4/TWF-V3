@@ -55,7 +55,7 @@ const dataList = [
     subtitle: "Taux de satisfaction de nos clients, en France et à l'étranger",
   },
   {
-    title: "13,1%",
+    title: "14,1%",
     subtitle: "CTR Moyen (taux de clic après apparition sur la SERP)",
   },
   {
