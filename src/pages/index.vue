@@ -143,6 +143,7 @@ useHead(() => ({
   <PricingComponent />
   <InfoBanner />
   <QuiSommesNous />
+  <QuestionComponent />
 </template>
 <style lang="scss">
 .why-choose-us {
