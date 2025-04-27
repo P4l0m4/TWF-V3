@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   ssr: false,
   srcDir: "src",
   css: ["@/styles/global.scss"],
-  modules: ["@vueuse/nuxt", "nuxt-jsonld"],
+  modules: ["@vueuse/nuxt", "nuxt-jsonld", "@nuxtjs/sitemap"],
   sitemap: {
     urls: async () => {
       return [];
