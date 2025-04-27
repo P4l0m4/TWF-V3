@@ -48,21 +48,51 @@ const argumentsList = [
 const dataList = [
   {
     title: "4 Mois",
-    subtitle: "Temps moyen de rentabilisation de nos sites web ",
+    subtitle: "Temps moyen pour rentabiliser votre site Web ",
   },
   {
     title: "100%",
-    subtitle: "Taux de satisfaction de nos clients",
+    subtitle: "Taux de satisfaction de nos clients, en France et à l'étranger",
   },
   {
-    title: "12,6%",
+    title: "13,1%",
     subtitle: "CTR Moyen (taux de clic après apparition sur la SERP)",
   },
   {
     title: "5",
-    subtitle: "Position moyenne sur la SERP",
+    subtitle:
+      "Position moyenne sur la SERP (page de résultats de recherche Google)",
   },
 ];
+
+useJsonld(() => ({
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Création de sites Web à Chambéry, en Savoie",
+  description:
+    "Création de sites Internet à Chambéry, en Savoie. Pas d'abonnement, pas de frais cachés.",
+  url: window.location.href,
+}));
+
+useHead(() => ({
+  title: "Création de sites Web à Chambéry, en Savoie",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Création de sites Internet à Chambéry, en Savoie. Pas d'abonnement, pas de frais cachés.",
+    },
+    {
+      property: "og:title",
+      content: "Création de sites Web à Chambéry, en Savoie",
+    },
+    {
+      property: "og:description",
+      content:
+        "Création de sites Internet à Chambéry, en Savoie. Pas d'abonnement, pas de frais cachés.",
+    },
+  ],
+}));
 </script>
 <template>
   <picture class="banner">
@@ -110,60 +140,11 @@ const dataList = [
       <span class="data__item__subtitle">{{ data.subtitle }}</span>
     </div>
   </section>
+  <PricingComponent />
+  <InfoBanner />
+  <QuiSommesNous />
 </template>
 <style lang="scss">
-.banner {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: center;
-  position: relative;
-
-  & img {
-    object-fit: cover;
-    object-position: top;
-    width: 100%;
-    height: 100%;
-  }
-
-  & source {
-    display: none;
-  }
-
-  .headlines {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    color: $text-color;
-    padding: 2rem 1rem;
-    z-index: 1;
-    color: $text-color-alt;
-    position: absolute;
-    inset: 0;
-    height: fit-content;
-    margin: auto;
-
-    @media (min-width: $big-tablet-screen) {
-      padding: 4rem;
-    }
-
-    &__small {
-      font-size: $subtitles-size-1;
-      font-weight: $regular;
-    }
-
-    &__title {
-      font-size: $titles-size-1;
-      font-weight: $bold;
-      text-wrap: balance;
-
-      @media (min-width: $big-tablet-screen) {
-        font-size: $titles-size-2;
-      }
-    }
-  }
-}
-
 .why-choose-us {
   display: flex;
   flex-direction: column;
@@ -241,7 +222,7 @@ const dataList = [
     justify-content: center;
 
     &__title {
-      font-size: $subtitles-size-2;
+      font-size: $titles-size-2;
       font-weight: $bold;
     }
 

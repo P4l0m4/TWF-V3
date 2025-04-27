@@ -1,26 +1,52 @@
 <script setup lang="ts">
-import { onMounted } from "vue";
+import { onMounted, onUnmounted, watch } from "vue";
+import { useRoute } from "vue-router";
 
-onMounted(() => {
-  const header = document.querySelector("header");
+const route = useRoute();
+let header: HTMLElement | null = null;
+let ticking = false;
+
+function onScroll() {
+  if (!header) return;
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      const add = window.scrollY > window.innerHeight;
+      header!.classList.toggle("scrolled-vh", add);
+      ticking = false;
+    });
+    ticking = true;
+  }
+}
+
+function applyHeaderRule(path: string) {
   if (!header) return;
 
-  let ticking = false;
+  window.removeEventListener("scroll", onScroll);
 
-  function onScroll() {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        if (!header) return;
-        const scrolledPastVH = window.scrollY > window.innerHeight;
-        header.classList.toggle("scrolled-vh", scrolledPastVH);
-        ticking = false;
-      });
-      ticking = true;
-    }
+  const pathsWithBanner =
+    path === "/" ||
+    path === "/site-internet-entreprise" ||
+    path === "/site-internet-sans-abonnement";
+
+  if (pathsWithBanner) {
+    header.classList.remove("scrolled-vh");
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    onScroll();
+  } else {
+    header.classList.add("scrolled-vh");
   }
+}
 
-  window.addEventListener("scroll", onScroll);
+onMounted(() => {
+  header = document.querySelector("header");
+  if (!header) return;
+  applyHeaderRule(route.path);
 });
+
+watch(() => route.path, applyHeaderRule);
+
+onUnmounted(() => window.removeEventListener("scroll", onScroll));
 </script>
 <template>
   <header class="header" ref="target">

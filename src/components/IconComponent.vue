@@ -46,5 +46,10 @@ withDefaults(defineProps<Props>(), {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: color 0.2s linear, font-size 0.2s linear;
+  -webkit-transition: color 0.2s linear, font-size 0.2s linear;
+  -moz-transition: color 0.2s linear, font-size 0.2s linear;
+  -o-transition: color 0.2s linear, font-size 0.2s linear;
+  -ms-transition: color 0.2s linear, font-size 0.2s linear;
 }
 </style>

@@ -3,39 +3,43 @@ import { colors } from "@/utils/colors";
 
 const faq = [
   {
-    title: "Quels sont les avantages des meubles sur mesure ?",
+    title: "Combien de temps faut-il pour créer un site web ?",
     answer:
-      "Les meubles sur mesure s’intègrent parfaitement a votre espace et répondent au mieux à vos attentes en termes de design et de qualité.",
+      "En moyenne, il faut entre 4 semaines et 3 mois pour créer un site web. Cela dépend de la complexité du projet et de la disponibilité des informations.",
   },
   {
-    title: "Pourquoi choisir un ébéniste agençeur ?",
+    title: "Qui crée les sites Internet chez Tekila Web Factory ?",
     answer:
-      "En tant qu'Ebéniste, je possède une minutie et une créativité accrues ainsi que des compétences complémentaires (sculpture, marqueterie, etc). Je maitrise également des outils de productions très spécifiques et variés et saurait même imaginer les méthodologies de production utiles pour des projets hors norme.",
+      "Dans notre équipe, c'est Paloma qui s'occupe de la création des sites Internet. Elle est spécialisée dans le développement Web et a une grande expérience dans ce domaine.",
   },
   {
-    title: "Comment se déroule la réalisation d’un meuble sur mesure ?",
+    title: "J'ai déjà un site Internet, mais je veux le changer. Que faire ?",
     answer:
-      "Tout commence par un échange de vive voix. Pendant cet échange, je réalise des croquis à main levée, prends des dimensions et tente de cerner au mieux la vision du client. Je m’atèle ensuite a dessiner et à chiffrer le projet. Si le client valide le devis, je repasse pour une prise de cote précise avant la réalisation en atelier. Vient ensuite la livraison, toujours dans les délais indiqué sur le devis. Une fois la pose terminée, si le client est satisfait, je lui transmet une facture.",
+      "Pas de souci ! Nous pouvons vous aider à migrer votre site Internet vers une nouvelle plateforme ou à le refondre complètement. Passez nous un petit coup de fil et nous vous aiderons à trouver la meilleure solution.",
   },
   {
-    title: "Quels sont vos délais de réalisation ?",
-    answer:
-      "Je mets un point d’honneur à vous délivrer un devis le plus rapidement possible, soit une semaine environ, quinze jours si nécessaires ( dans le cas d’un accroissement de travail, ou d’un devis nécessitant plus de temps). Pour ce qui est des réalisations, j’essaie de vous livrer vos aménagements sous 4 à 6 mois.",
+    title: "Faites-vous des sites Internet en plusieurs langues ?",
+    answer: "Oui, nous pouvons créer des sites Internet multilingues.",
   },
   {
-    title: "Comment obtenir un devis pour un meuble sur mesure ?",
+    title: "Est-ce que je peux gérer mon site Internet moi-même ?",
     answer:
-      "Rien de plus simple, me contacter par téléphone au 06 23 04 16 37, ou par mail à l’adresse jp.ebenisterie73@gmail.com. Vous pouvez également faire une demande devis directement sur le site depuis le formulaire de contact.",
+      "Oui, nous vous formons à l'utilisation de votre site Internet afin que vous puissiez le gérer vous-même. Nous restons également disponibles pour vous aider si besoin.",
   },
   {
-    title: "Quelles sont vos garanties et conditions après-vente ?",
+    title: "Est-ce que je peux changer d'hébergeur ?",
     answer:
-      "Ma meilleure publicité étant le bouche à oreille, je m’efforce de vous satisfaire. Je fais donc toujours en sorte que le produit que je vous vends corresponde à vos attentes. Si besoin, j’interviens sans soucis à la suite des travaux pour affiner votre demande.",
+      "Oui, vous pouvez changer d'hébergeur à tout moment. Nous travaillons avec Netlify et Vercel, mais nous pouvons également vous aider à migrer vers d'autres hébergeurs.",
   },
   {
-    title: "Quels sont vos tarifs pour un projet sur mesure ?",
+    title: "Est-ce que je peux changer de nom de domaine ?",
     answer:
-      "Il est certain que les meubles sur mesure ont un coût. Tout comme mes outils de production, les matériaux de qualité, mes compétences et mon temps. Je m’engage, pour autant, à toujours essayer de vous proposer le meilleur tarif relatif à votre projet. Chaque projet étant unique, je vous invite à me contacter pour un devis personnalisé.",
+      "Vous pouvez changer de nom de domaine à tout moment. Nous vous aiderons à migrer votre site vers le nouveau nom de domaine.",
+  },
+  {
+    title: "Est-ce que je peux changer de prestataire ?",
+    answer:
+      "Bien sûr ! Nous pouvons fournir le code source et les fichiers de votre site Internet pour que vous puissiez le confier à un autre prestataire.",
   },
 ];
 
@@ -66,8 +70,12 @@ function toggleQuestion(index) {
 </script>
 <template>
   <section id="faq" class="faq">
-    <span class="faq__title">Foire aux questions</span>
-
+    <div class="faq__headlines">
+      <h1 class="faq__headlines__small">
+        Questions courantes sur la creation de sites web
+      </h1>
+      <span class="faq__headlines__title">FAQ</span>
+    </div>
     <div class="faq__cards">
       <div
         class="faq__cards__card"
@@ -78,9 +86,9 @@ function toggleQuestion(index) {
         <h2 class="faq__cards__card__question">
           <span class="icon"
             ><IconComponent
-              :icon="questionOpened === index ? 'xx' : 'plus'"
+              :icon="questionOpened === index ? 'xx' : 'chat-circle-bold'"
               size="1rem"
-              :color="colors['primaryColor']"
+              :color="colors['primary-color']"
           /></span>
           {{ question.title }}
         </h2>
@@ -97,25 +105,34 @@ function toggleQuestion(index) {
   flex-direction: column;
   padding: 4rem 2rem;
   gap: 1rem;
-  background-color: $base-color-darker;
+  background-color: $base-color;
 
   @media (min-width: $big-tablet-screen) {
     padding: 8rem 4rem;
     gap: 2rem;
   }
 
-  &__title {
-    font-size: 2rem;
-    font-weight: $bold;
-    width: fit-content;
+  &__headlines {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: $text-color;
+    color: $text-color;
+    height: fit-content;
 
-    &::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 2px;
-      background-color: $accent-color;
-      margin-top: 1rem;
+    &__small {
+      font-size: $subtitles-size-1;
+      font-weight: $regular;
+    }
+
+    &__title {
+      font-size: $titles-size-1;
+      font-weight: $bold;
+      text-wrap: balance;
+
+      @media (min-width: $big-tablet-screen) {
+        font-size: $titles-size-3;
+      }
     }
   }
 
@@ -136,14 +153,10 @@ function toggleQuestion(index) {
     }
 
     &__card {
-      background-color: $base-color;
-      border-radius: 0 65px 0 0;
-      box-shadow: $shadow;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
       width: 100%;
-      padding: 1rem;
       gap: 1rem;
       cursor: pointer;
       height: fit-content;
@@ -151,19 +164,15 @@ function toggleQuestion(index) {
 
       @media (min-width: $big-tablet-screen) {
         height: 100%;
-        padding: 2rem;
       }
 
       &__question {
         display: flex;
-        justify-content: space-between;
-        //   align-items: end;
         width: 100%;
-        font-size: $big-text-size;
-        font-weight: $bold;
+        font-size: $text-size-3;
+        font-weight: $regular;
         align-self: stretch;
-        flex-direction: column;
-
+        flex-direction: row;
         gap: 1rem;
 
         @media (min-width: $big-tablet-screen) {
