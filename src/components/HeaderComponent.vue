@@ -22,13 +22,15 @@ function applyHeaderRule(path: string) {
   if (!header) return;
 
   window.removeEventListener("scroll", onScroll);
+  const bannerPaths = [
+    "/", // home
+    "/site-internet-entreprise",
+    "/site-internet-sans-abonnement",
+  ];
 
-  const pathsWithBanner =
-    path === "/" ||
-    path === "/site-internet-entreprise" ||
-    path === "/site-internet-sans-abonnement";
+  const hasBanner = bannerPaths.includes(path);
 
-  if (pathsWithBanner) {
+  if (hasBanner) {
     header.classList.remove("scrolled-vh");
     window.addEventListener("scroll", onScroll, { passive: true });
 
