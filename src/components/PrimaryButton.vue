@@ -67,7 +67,7 @@ const iconColor = computed(() => {
 .button {
   width: 100%;
   max-width: 375px;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 1.5rem;
   cursor: pointer;
   white-space: nowrap;
   display: flex;
