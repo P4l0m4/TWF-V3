@@ -208,7 +208,7 @@ useHead(() => ({
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 4rem;
-  background-color: $accent-color-faded;
+  background-color: $accent-color;
   padding: 2rem 1rem;
 
   @media (min-width: $big-tablet-screen) {
@@ -219,7 +219,7 @@ useHead(() => ({
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    color: $base-color;
+    color: $primary-color;
     justify-content: center;
 
     &__title {
