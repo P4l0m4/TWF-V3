@@ -22,15 +22,15 @@
         </div>
       </div>
       <div class="footer__text__column">
-        <NuxtLink to="#tarifs" class="footer__text__column__link"
+        <NuxtLink to="/#tarifs" class="footer__text__column__link"
           >Tarifs</NuxtLink
         ><NuxtLink
-          to="#process"
+          to="/#process"
           class="footer__text__column__link"
           style="opacity: 0.5; pointer-events: none"
           >Process</NuxtLink
         >
-        <NuxtLink to="#who-we-are" class="footer__text__column__link"
+        <NuxtLink to="/#who-we-are" class="footer__text__column__link"
           >Qui sommes nous ?</NuxtLink
         >
         <NuxtLink
@@ -38,11 +38,16 @@
           class="footer__text__column__link"
           >Questions courantes</NuxtLink
         >
-        <NuxtLink to="#why-choose-us" class="footer__text__column__link"
+        <NuxtLink to="/#why-choose-us" class="footer__text__column__link"
           >Pourquoi nous choisir ?</NuxtLink
         >
       </div>
       <div class="footer__text__column">
+        <NuxtLink
+          to="/dernieres-creations-sites-web"
+          class="footer__text__column__link"
+          >Nos créations préférées</NuxtLink
+        >
         <NuxtLink
           to="/site-internet-entreprise"
           class="footer__text__column__link"
