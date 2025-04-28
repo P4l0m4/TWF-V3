@@ -33,6 +33,9 @@ useHead(() => ({
     <source
       media="(min-width: 1100px)"
       srcset="@/assets/images/company-banner.webp" />
+    <source
+      media="(min-width: 600px)"
+      srcset="@/assets/images/company-banner-tablet.webp" />
     <div class="headlines">
       <span class="headlines__small">Des sites simples, pro, efficaces</span>
       <h1 class="headlines__title">Site internet entreprise</h1>
