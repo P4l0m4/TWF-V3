@@ -128,10 +128,6 @@ useHead(() => ({
 
     @media (min-width: $laptop-screen) {
       width: 50%;
-
-      &:hover {
-        cursor: pointer;
-      }
     }
 
     &__headlines {
