@@ -105,7 +105,7 @@ useHead(() => ({
   display: flex;
   flex-direction: column;
 
-  @media (min-width: $big-tablet-screen) {
+  @media (min-width: $laptop-screen) {
     flex-direction: row;
   }
 
@@ -126,7 +126,7 @@ useHead(() => ({
       z-index: 0;
     }
 
-    @media (min-width: $big-tablet-screen) {
+    @media (min-width: $laptop-screen) {
       width: 50%;
 
       &:hover {
@@ -148,7 +148,7 @@ useHead(() => ({
       justify-content: center;
       padding: 1rem;
 
-      @media (min-width: $big-tablet-screen) {
+      @media (min-width: $laptop-screen) {
         gap: 2rem;
         padding: 4rem;
       }
@@ -169,21 +169,39 @@ useHead(() => ({
       }
 
       &__logo {
-        width: 30%;
+        width: 180px;
         max-width: 180px;
-        height: auto;
-        object-fit: contain;
+        height: 140px;
+        max-height: 140px;
+        object-fit: cover;
+        object-position: center;
         margin: auto;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
+
+        @media (min-width: $laptop-screen) {
+          margin-bottom: 2rem;
+        }
       }
 
       &__description {
         display: flex;
         color: $text-color-alt;
-        font-size: $titles-size-1;
+        font-size: $subtitles-size-2;
         font-weight: $bold;
         border-radius: 0.4rem;
         text-wrap: balance;
+
+        @media (min-width: $big-tablet-screen) {
+          font-size: $titles-size-1;
+        }
+
+        @media (min-width: $laptop-screen) {
+          font-size: $subtitles-size-2;
+        }
+
+        @media (min-width: $desktop-screen) {
+          font-size: $titles-size-1;
+        }
       }
     }
 
