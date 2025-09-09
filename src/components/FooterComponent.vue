@@ -24,11 +24,6 @@
       <div class="footer__text__column">
         <NuxtLink to="/#tarifs" class="footer__text__column__link"
           >Tarifs</NuxtLink
-        ><NuxtLink
-          to="/#process"
-          class="footer__text__column__link"
-          style="opacity: 0.5; pointer-events: none"
-          >Process</NuxtLink
         >
         <NuxtLink to="/#who-we-are" class="footer__text__column__link"
           >Qui sommes nous ?</NuxtLink
@@ -38,27 +33,15 @@
           class="footer__text__column__link"
           >Questions courantes</NuxtLink
         >
+      </div>
+      <div class="footer__text__column">
         <NuxtLink to="/#why-choose-us" class="footer__text__column__link"
           >Pourquoi nous choisir ?</NuxtLink
         >
-      </div>
-      <div class="footer__text__column">
         <NuxtLink
           to="/dernieres-creations-sites-web"
           class="footer__text__column__link"
           >Nos créations préférées</NuxtLink
-        >
-        <NuxtLink
-          to="/site-internet-entreprise"
-          class="footer__text__column__link"
-          style="opacity: 0.5; pointer-events: none"
-          >Sites internet d'entreprise</NuxtLink
-        >
-        <NuxtLink
-          to="/site-internet-sans-abonnement"
-          class="footer__text__column__link"
-          style="opacity: 0.5; pointer-events: none"
-          >Sites internet sans abonnement</NuxtLink
         >
       </div>
     </div>

@@ -75,6 +75,7 @@ const iconColor = computed(() => {
   gap: 0.75rem;
   justify-content: center;
   align-items: center;
+  border-radius: calc($radius * 2);
 }
 
 .icon-wrapper {
