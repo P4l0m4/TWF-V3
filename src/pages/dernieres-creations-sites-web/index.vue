@@ -1,4 +1,4 @@
-<script lang="ts">
+<script setup lang="ts">
 import InfoBanner from "~/components/InfoBanner.vue";
 import PrimaryButton from "~/components/PrimaryButton.vue";
 

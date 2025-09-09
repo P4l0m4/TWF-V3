@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { colors } from "@/utils/colors";
 
 const faq = [
@@ -45,24 +45,25 @@ const faq = [
 
 const questions = faq.map((question) => {
   return {
-    "@type": "Question",
+    "@type": "Question" as const,
     name: question.title,
     acceptedAnswer: {
-      "@type": "Answer",
+      "@type": "Answer" as const,
       text: question.answer,
     },
   };
 });
+
 useJsonld(() => ({
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [questions],
+  mainEntity: questions,
 }));
 
-const questionOpened = ref("");
-function toggleQuestion(index) {
+const questionOpened = ref();
+function toggleQuestion(index: number) {
   if (questionOpened.value === index) {
-    questionOpened.value = "";
+    questionOpened.value = null;
   } else {
     questionOpened.value = index;
   }
