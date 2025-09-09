@@ -2,13 +2,15 @@
 import InfoBanner from "~/components/InfoBanner.vue";
 import PrimaryButton from "~/components/PrimaryButton.vue";
 
+const reqUrl = useRequestURL();
+
 useJsonld(() => ({
   "@context": "https://schema.org",
   "@type": "WebPage",
   name: "Derniers projets de création de sites Web à Chambéry",
   description:
     "Nos tous derniers projets de création de sites Internet à Chambéry.",
-  url: window.location.href,
+  url: reqUrl.href,
 }));
 
 useHead(() => ({

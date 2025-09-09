@@ -25,6 +25,37 @@ const links = routes.map(route => ({
 }))
 
 const hoveredLink = ref('')
+
+const reqUrl = useRequestURL();
+
+useJsonld(() => ({
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Derniers projets de création de sites Web à Chambéry",
+  description:
+    "Nos tous derniers projets de création de sites Internet à Chambéry.",
+  url: reqUrl.href,
+}));
+
+useHead(() => ({
+  title: "Plan du site | Tekila Web Factory",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Plan du site | Création de sites Internet à Chambéry, en Savoie.",
+    },
+    {
+      property: "og:title",
+      content: "Plan du site | Tekila Web Factory",
+    },
+    {
+      property: "og:description",
+      content:
+        "Plan du site | Création de sites Internet à Chambéry, en Savoie.",
+    },
+  ],
+}));
 </script>
 <template>
   <section class="plan">

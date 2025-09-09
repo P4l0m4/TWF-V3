@@ -1,10 +1,21 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 import { isDesktop } from "~/utils/functions";
-const desktopScreen = ref(isDesktop());
 
-window.addEventListener("resize", () => {
+const desktopScreen = ref(false);
+
+onMounted(() => {
   desktopScreen.value = isDesktop();
+
+  window.addEventListener("resize", () => {
+    desktopScreen.value = isDesktop();
+  });
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", () => {
+    desktopScreen.value = isDesktop();
+  });
 });
 
 const argumentsList = [
@@ -65,13 +76,15 @@ const dataList = [
   },
 ];
 
+const reqUrl = useRequestURL();
+
 useJsonld(() => ({
   "@context": "https://schema.org",
   "@type": "WebPage",
   name: "Création de sites Web à Chambéry, en Savoie",
   description:
     "Création de sites Internet à Chambéry, en Savoie. Pas d'abonnement, pas de frais cachés.",
-  url: window.location.href,
+  url: reqUrl.href,
 }));
 
 useHead(() => ({

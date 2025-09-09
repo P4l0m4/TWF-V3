@@ -1,11 +1,13 @@
 <script setup lang="ts">
+const reqUrl = useRequestURL();
+
 useJsonld(() => ({
   "@context": "https://schema.org",
   "@type": "WebPage",
   name: "Questions courantes sur la création de sites Web",
   description:
     "Questions courantes sur la création de sites Web à Chambéry, en Savoie.",
-  url: window.location.href,
+  url: reqUrl.href,
 }));
 
 useHead(() => ({
