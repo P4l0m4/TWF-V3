@@ -8,9 +8,9 @@ const faq = [
       "En moyenne, il faut entre 4 semaines et 3 mois pour créer un site web. Cela dépend de la complexité du projet et de la disponibilité des informations.",
   },
   {
-    title: "Qui crée les sites Internet chez Tekila Web Factory ?",
+    title: "Comment savoir si ça vaut le coup de créer un site Internet ?",
     answer:
-      "Dans notre équipe, c'est Paloma qui s'occupe de la création des sites Internet. Elle est spécialisée dans le développement Web et a une grande expérience dans ce domaine.",
+      "Créer un site web est particulièrement utile si votre activité a besoin de visibilité, de crédibilité ou d’automatisation.",
   },
   {
     title: "J'ai déjà un site Internet, mais je veux le changer. Que faire ?",
